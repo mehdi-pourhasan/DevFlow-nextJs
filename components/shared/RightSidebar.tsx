@@ -4,19 +4,19 @@ import React from "react";
 import RenderTag from "./RenderTag";
 
 const hotQuestions = [
-  { _id: 1, title: "How do I use express as custom server in nextJS" },
-  { _id: 2, title: "Is it only me or the font is bolder than necessary" },
-  { _id: 3, title: "Redux Toolkit Not Updating State as Expected" },
-  { _id: 4, title: "Can I get the course for free?" },
-  { _id: 5, title: "How do I use express as custom server in nextJS" },
+  { _id: "1", title: "How do I use express as custom server in nextJS" },
+  { _id: "2", title: "Is it only me or the font is bolder than necessary" },
+  { _id: "3", title: "Redux Toolkit Not Updating State as Expected" },
+  { _id: "4", title: "Can I get the course for free?" },
+  { _id: "5", title: "How do I use express as custom server in nextJS" },
 ];
 
 const popularTags = [
-  { _id: 1, name: "javaScript", totalQuestions: 4 },
-  { _id: 2, name: "WhoJs", totalQuestions: 1 },
-  { _id: 3, name: "Next", totalQuestions: 9 },
-  { _id: 4, name: "React", totalQuestions: 10 },
-  { _id: 5, name: "Express", totalQuestions: 2 },
+  { _id: "1", name: "javaScript", totalQuestions: 4 },
+  { _id: "2", name: "WhoJs", totalQuestions: 1 },
+  { _id: "3", name: "Next", totalQuestions: 9 },
+  { _id: "4", name: "React", totalQuestions: 10 },
+  { _id: "5", name: "Express", totalQuestions: 2 },
 ];
 const RightSidebar = () => {
   return (
