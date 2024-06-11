@@ -5,65 +5,12 @@ import NoResult from "@/components/shared/NoResult";
 import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
+import { getQuestions } from "@/lib/actions/question.action";
 import Link from "next/link";
 import React from "react";
 
-const questions = [
-  {
-    _id: "1",
-    title: "Redux Toolkit Not Updating State as Expected",
-    tags: [
-      { _id: "1", name: "python" },
-      { _id: "2", name: "css" },
-      { _id: "3", name: "web" },
-    ],
-    author: {
-      _id: "1",
-      name: "Mehdi",
-      picture: "https://example.com/mehdi.jpg",
-    },
-    upVotes: 10,
-    views: 100,
-    answers: Array(10).fill({}),
-    createdAt: new Date("2024-05-01T10:00:00Z"),
-  },
-  {
-    _id: "2",
-    title: "Async/Await Function Not Handling Errors Properly",
-    tags: [
-      { _id: "1", name: "Async/Await" },
-      { _id: "2", name: "JavaScript" },
-    ],
-    author: {
-      _id: "2",
-      name: "adrian",
-      picture: "https://example.com/mehdi.jpg",
-    },
-    upVotes: 30000000,
-    views: 150000,
-    answers: Array(10).fill({}),
-    createdAt: new Date("2024-06-03T10:00:00Z"),
-  },
-  {
-    _id: "3",
-    title: "Next.js Redirect from / to another page",
-    tags: [
-      { _id: "1", name: "Next/route" },
-      { _id: "2", name: "NextJs" },
-    ],
-    author: {
-      _id: "3",
-      name: "Ali",
-      picture: "https://example.com/mehdi.jpg",
-    },
-    upVotes: 2000000,
-    views: 15000,
-    answers: [{}, {}],
-    createdAt: new Date("2024-01-01T10:00:00Z"),
-  },
-];
-
-const Home = () => {
+const Home = async () => {
+  const result = await getQuestions({});
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -93,8 +40,8 @@ const Home = () => {
       <HomeFilters />
 
       <div className="mt-10 flex w-full flex-col gap-6">
-        {questions.length > 0 ? (
-          questions.map((ques) => (
+        {result.questions.length > 0 ? (
+          result.questions.map((ques) => (
             <QuestionCard
               key={ques._id}
               _id={ques._id}
