@@ -11,7 +11,7 @@ export default authMiddleware({
     "/community",
     "jobs",
   ],
-  ignoredRoutes: ["/api/webhook", "/api/chatgpt"],
+  ignoredRoutes: ["/api/chatgpt", "/api/webhooks(.*)"],
 });
 
 export const config = {
