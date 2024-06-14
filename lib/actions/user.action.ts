@@ -76,6 +76,7 @@ export async function deleteUser(params: DeleteUserParams) {
     const deleteUser = await User.findByIdAndDelete(user._id);
 
     return deleteUser;
+    //
   } catch (err) {
     console.error(err);
     throw err;
